@@ -193,7 +193,7 @@ struct ulog_message_info_header_s {
   struct message_header_s header; // msg_type = 'I'
   uint8_t key_len;
   char key[key_len];
-  char value[header.msg_size-1-key_len]
+  char value[header.msg_size-1-key_len];
 };
 ```
 
@@ -248,7 +248,7 @@ struct ulog_message_info_multiple_header_s {
   uint8_t is_continued; // can be used for arrays
   uint8_t key_len;
   char key[key_len];
-  char value[header.msg_size-2-key_len]
+  char value[header.msg_size-2-key_len];
 };
 ```
 
@@ -267,7 +267,7 @@ struct message_info_s {
   struct message_header_s header; // msg_type = 'P'
   uint8_t key_len;
   char key[key_len];
-  char value[header.msg_size-1-key_len]
+  char value[header.msg_size-1-key_len];
 };
 ```
 
@@ -285,7 +285,7 @@ struct ulog_message_parameter_default_header_s {
   uint8_t default_types;
   uint8_t key_len;
   char key[key_len];
-  char value[header.msg_size-2-key_len]
+  char value[header.msg_size-2-key_len];
 };
 ```
 
@@ -372,7 +372,7 @@ struct message_logging_s {
   struct message_header_s header; // msg_type = 'L'
   uint8_t log_level;
   uint64_t timestamp;
-  char message[header.msg_size-9]
+  char message[header.msg_size-9];
 };
 ```
 
@@ -398,7 +398,7 @@ struct message_logging_tagged_s {
   uint8_t log_level;
   uint16_t tag;
   uint64_t timestamp;
-  char message[header.msg_size-11]
+  char message[header.msg_size-11];
 };
 ```
 
